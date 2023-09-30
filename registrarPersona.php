@@ -1,27 +1,36 @@
 <?php
 
-  include('../objs/rs_municipio.php');
+  include('./librerias/conexion.php');
 
-  $municipio = $objconsulta->municipios();
+  $conexion = new conexion();
+ 
+  $sql_municipios="SELECT municipioCodigo, municipioDescripcion FROM turismo.municipios;";
+
+
+  $municipios=$conexion->consulta($sql_municipios);
+          
+
 
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
   <?php
-    include('./head.php')
+    include('./head.php');
   ?>
-  <link rel="stylesheet" href="../css/estilos_registro.css">
+
+  <link rel="stylesheet" href="./css/estilos_registro.css">
+
 </head>
 <body>
   <main>
     <div class="imagen">
-      <img src="../img/pexels-igor-haritanovich-1695052.jpg" alt="">
+      <img src="./img/pexels-igor-haritanovich-1695052.jpg" alt="">
     </div>
     <section class="container">
       <div class="title">Registro</div>
       <article class="content">
-        <form class="needs-validation" method="POST" novalidate action="../registros/regitro_persona.php">
+        <form class="needs-validation" method="POST" novalidate action="./librerias/regitro_persona.php">
           <div class="user-details">
             <div class="input-box">
               <label for="validationCustom01" class="details form-label">Nombre</label>
@@ -37,19 +46,19 @@
             </div>
             <div class="input-box">
               <label for="validationCustom03" class="details">ID Número</label>
-              <input type="text" class="form-control" name="identificacion" id="validationCustom03" placeholder="Digita tu ID número" required>
+              <input type="number" class="form-control" name="identificacion" id="validationCustom03" placeholder="Digita tu ID número" required>
               <div class="valid-feedback">!Se ve bien¡</div>
               <div class="invalid-feedback">Ingrese su Identificación</div>
             </div>
             <div class="input-box">
               <label for="validationCustom04" class="details">Email</label>
-              <input type="text" class="form-control" name="email" id="validationCustom04" placeholder="Digita tu email" required>
+              <input type="email" class="form-control" name="email" id="validationCustom04" placeholder="Digita tu email" required>
               <div class="valid-feedback">!Se ve bien¡</div>
               <div class="invalid-feedback">Ingrese su Email</div>
             </div>
             <div class="input-box">
               <label for="validationCustom05" class="details">Telefono</label>
-              <input type="text" class="form-control" name="telefono" id="validationCustom05" placeholder="Digita tu número telefonico" required>
+              <input type="number" class="form-control" name="telefono" id="validationCustom05" placeholder="Digita tu número telefonico" required>
               <div class="valid-feedback">!Se ve bien¡</div>
               <div class="invalid-feedback">Ingrese su Número de teléfono</div>
             </div>
@@ -58,11 +67,11 @@
               <select name="municipio" name="municipio" id="validationCustom06" class="form-select">
                 <option selected disabled value="">seleccinar..</option>
                 <?php
-                  foreach($municipio as $dta_municipio){
-                    $mun_codigo = $dta_municipio['mun_codigo'];
-                    $mun_descripcion = $dta_municipio['mun_descripcion'];
+                  foreach($municipios as $filaMunicipio){
+                    $municipioCodigo = $filaMunicipio['municipioCodigo'];
+                    $municipioDescripcion = $filaMunicipio['municipioDescripcion'];
                 ?>
-                  <option value="<?php $mun_codigo?>"><?php echo $mun_descripcion?></option>
+                  <option value="<?php echo $municipioCodigo?>"><?php echo $municipioDescripcion?></option>
                 <?php 
 
                   }
@@ -94,6 +103,6 @@
       </article>
     </section>
   </main>
-  <script src="../valjs/validar_formulario.js"></script>
+  <script src="./js/validar_formulario.js"></script>
 </body>
 </html>

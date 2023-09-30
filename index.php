@@ -3,49 +3,15 @@
 
 <head>
     <?php
-        include('./head.php')
+        include('componentes/head.php')
     ?>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand color" href="#">Navbar</a>
-            <button class="navbar-toggler color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item space">
-                        <a class="nav-link active" aria-current="page" href="../form/hola.html">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown space">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" href="#">
-                            Cultura Huilense
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Historia</a></li>
-                            <li><a class="dropdown-item" href="#">Ritmos Musicales</a></li>
-                            <li><a class="dropdown-item" href="#">Talento Huilense</a></li>
-                            <li><a class="dropdown-item" href="#">Fiestas</a></li>
-                            <li><a class="dropdown-item" href="#">Gastronomia</a></li>
-                            <li><a class="dropdown-item" href="#">Mitos y Leyendas</a></li>
-                            <li><a class="dropdown-item" href="#">vocabulario Opita</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item spacer">
-                        <button class="btn btn-outline-warning color" type="button"><a class="nodecorate" href="./signUp.php">REGISTRO</a></button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-outline-success" type="submit">INICIAR SESIÓN</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php
+        include('componentes/nav.php')
+    ?>
     <main>
         <section>
             <article class="container-fluid" style="padding: 0;">
@@ -60,17 +26,17 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item padre active">
-                            <img src="../img/montaña.jpg" class="d-block w-100" alt="">
+                            <img src="./img/montaña.jpg" class="d-block w-100" alt="">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
                         </div>
                         <div class="carousel-item padre2">
-                            <img src="../img/manos_cafe.jpg" class="d-block w-100" alt="">
+                            <img src="./img/manos_cafe.jpg" class="d-block w-100" alt="">
                         </div>
                         <div class="carousel-item padre3">
-                            <img src="../img/maquina.jpg" alt="" class="d-block w-100">
+                            <img src="./img/maquina.jpg" alt="" class="d-block w-100">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
@@ -96,7 +62,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
-                                <img src="../img/comida.jpeg" class="img-fluid rounded-start" width="100%" alt="">
+                                <img src="./img/comida.jpeg" class="img-fluid rounded-start" width="100%" alt="">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Productos de café</h5>
@@ -111,7 +77,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
-                                <img src="../img/iquira.jpeg" class="img-fluid rounded-start" width="100%" alt="...">
+                                <img src="./img/iquira.jpeg" class="img-fluid rounded-start" width="100%" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Fincas productoras</h5>
@@ -126,7 +92,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
-                                <img src="../img/cafe.jpeg" class="img-fluid rounded-start" width="100%" alt="...">
+                                <img src="./img/cafe.jpeg" class="img-fluid rounded-start" width="100%" alt="...">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Productores</h5>
@@ -170,11 +136,9 @@
             </article>
         </section>
     </main>
-    <footer class="py-5 fondo">
-        <div class="container-fluid">
-            <p class="text_footer">Dirección: </p>
-        </div>
-    </footer>
+    <?php
+        include('componentes/footer.php');
+    ?>
 
 </body>
 

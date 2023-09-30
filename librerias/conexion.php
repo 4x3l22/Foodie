@@ -9,13 +9,13 @@
 
         public function __construct(){
             $this->server="localhost";
-            $this->usuario="postgres";
+            $this->usuario="root";
             $this->baseDatos="turismo";
             $this->password="123456";
         }
 
         public function conectar(){
-            $this->dsn = 'pgsql:host='.$this->server.';port=5432;dbname='.$this->baseDatos.'';
+            $this->dsn = 'mysql:host='.$this->server.';port=3306;dbname='.$this->baseDatos.'';
             try {
                 $conexion = new PDO($this->dsn, $this->usuario, $this->password);
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
